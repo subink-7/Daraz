@@ -1,101 +1,52 @@
 import Image from "next/image";
+import banner from "@/public/images/banner.jpg"
+import CardComponent from "./component/homeCard/CardComponent";
+import Categories from "./component/homeCard/Categories";
+import Link from "next/link";
+
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.js
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <div className="bg-gray-100">
+    
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      {/* Banner */}
+      <section className="flex justify-center my-4">
+        <Image src={banner} alt="banner" width={1000} height={1000} className="w-full max-w-6xl"
+        />
+      </section>
+
+      {/* Flash Sale Section */}
+      <section className="bg-white p-4 max-w-6xl mx-auto">
+        <div className="flex justify-between items-center">
+          <h2 className="text-xl font-bold">Flash Sale</h2>
+          <button className="text-orange-600 font-semibold">Shop All Products</button>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+
+        {/* Flash Sale Products */}
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 mt-4">
+          <CardComponent title={'soundcore K20i by Anker, Semi-in-Ear Earbuds, Bluetooth Wireless'} price={'2000'} oldprice={4000} imageurl={"https://img.drz.lazcdn.com/static/np/p/582dc47684d561245808dc18a6a4dfa6.jpg_200x200q80.jpg_.webpSS"}/>
+          <CardComponent title={'FL1P6 Wireless Bluetooth Speaker Outdoor Riding Card Audio Mp3 Music Player Support Aux Audio Input USB Playback'} price={'1800'} oldprice={2500} imageurl={'https://img.drz.lazcdn.com/static/np/p/5171ea54b09bfc94fff453f32847edca.jpg_200x200q80.jpg_.webp'}/>
+          <CardComponent title={'Remote Control Rechargeable Offroad Metal 1:20 Scale Car High Speed Offroad Vehicle'} price={'800'} oldprice={2000} imageurl={'https://img.drz.lazcdn.com/static/np/p/134631f365056a038ec3d80f657b1603.png_200x200q80.png_.webp'}/>
+          <CardComponent title={'Tws Wireless Bluetooth Airbuds Charging Case Super Sound'} price={'900'} oldprice={1800} imageurl={'https://img.drz.lazcdn.com/g/kf/S85011dc306d84c3797d12b8f6f4d9affm.jpg_200x200q80.jpg_.webp'}/>
+          <CardComponent title={'Hair Trimming Vintage T9 Electric Hair Clipper Hair Cutting Machine Professional'} price={'2000'} oldprice={3500} imageurl={'https://img.drz.lazcdn.com/static/np/p/36cd4e671527a98c113e852ff2d423dd.jpg_200x200q80.jpg_.webp'}/>
+          <CardComponent title={'Color Box Set For Kids 42 Pieces Colors Set'} price={'400'} oldprice={800} imageurl={'https://img.drz.lazcdn.com/static/np/p/f9b9aeaa71e867ceb0be947b1be63070.jpg_200x200q80.jpg_.webp'}/>
+
+          
+        </div>
+      </section>
+
+      {/* Categories Section */}
+      <section className="bg-white mt-4 p-4 max-w-6xl mx-auto">
+        <h2 className="text-xl font-bold">Categories</h2>
+        <div className="grid grid-cols-4 md:grid-cols-8 gap-4 mt-4">
+        <Categories title={'Rice'} imageurl={'https://img.drz.lazcdn.com/static/np/p/f03985a48fce7df807afcdc2edbe069a.jpg_80x80q80.jpg_.webp'}/>
+        <Categories title={'Coffe Grinder'} imageurl={'https://img.drz.lazcdn.com/g/kf/S8c9abce08c874006b38ce1a3f5b40130F.jpg_80x80q80.jpg_.webp'}/>
+        <Categories title={'Bracelet'} imageurl={'https://img.drz.lazcdn.com/static/np/p/bfbc800b396d711e9a9fafeebf1c9622.jpg_80x80q80.jpg_.webp'}/>
+        <Categories title={'Cleaning Tools'} imageurl={'https://img.drz.lazcdn.com/static/np/p/a905edd00f67e3af89f599b6d391dce4.jpg_80x80q80.jpg_.webp'}/>
+        </div>
+      </section>
     </div>
   );
 }
+

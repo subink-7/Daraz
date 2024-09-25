@@ -1,0 +1,3 @@
+[submodule "Daraz"]
+	path = Daraz
+	url = https://github.com/subink-7/Daraz.git
