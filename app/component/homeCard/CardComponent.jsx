@@ -4,6 +4,7 @@ import React from 'react'
 export default function CardComponent({ imageurl, title, price, oldprice }) {
   return (
     <Link href="/ProductDetails" passHref>
+      <div className="flex flex-wrap justify-center">
       <div className="bg-gray-100 p-4 rounded-lg shadow-lg transition-transform transform hover:scale-105 cursor-pointer w-48"> {/* Fixed width */}
         <img
           src={imageurl ?? '/placeholder-image.jpg'}
@@ -18,7 +19,9 @@ export default function CardComponent({ imageurl, title, price, oldprice }) {
           </p>
         </div>
       </div>
+      </div>
     </Link>
+    
   );
 }
 
