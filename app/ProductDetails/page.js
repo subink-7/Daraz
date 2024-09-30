@@ -2,6 +2,8 @@ import React from 'react'
 import Paisa from "@/public/images/paisa.jpg"
 import Image from 'next/image'
 
+
+
 export default function ProductDetails() {
   return (
     <div className="bg-gray-100 p-6">
